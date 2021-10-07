@@ -7,11 +7,9 @@ HW13 -- Where Do BigSibs Come From?
 
 /*
 DISCO:
- - In order to declare a variable in a class, it has to be declared as a static variable
- - You can name instances of classes to make it easier to refer to them
+ - You can store the constructor as anything, so long as you recall it.
 QCC:
- - How does static change defining variables and functions?
- - Can you set variables in the same way you set functions for classes?
+ - Can constructors be created in the helper class?
 */
 
 public class Greet {
