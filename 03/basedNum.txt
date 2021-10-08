@@ -1,1 +1,41 @@
-hjfdsakj
+Jonathan Song, Gabriel Thompson, Hamim Seam (TNPG: Linux Lizards)
+APCS
+Binary Trio Task
+2021-21-09
+
+0) The "base" in "base-X number system" represents how many digits/symbols are
+in the number system. As in base-10, our typical number system, all number
+systems loop over when they reach their base number, and increment the value
+of the previous number. For example, base-5 would only use the digits 0, 1,
+2, 3, and 4, and when you are counting in base-5, you would count: 0, 1, 2,
+3, 4, 10, 11, 12, 13, 14, 20, 21, 22, 23 ... incrementing the next digit
+whenever the a digit should reach 5.
+
+1) Binary is a term for base-2, which is a number system that uses two digits.
+It is commonly used in computing to represent information, because computers
+can easily distinguish between on and off states. For example, 19 in binary is
+10011, which is equivalent to (1 * 2^4) + (0 * 2^3) + (0 * 2^2) + (1 * 2^1) +
+(1 * 2^0) = 16 + 0 + 0 + 2 + 1 = 19.
+
+2) Start with the rightmost digit of the binary sequence. Set the variable
+"index" to 0. Set the variable "total" to 0.
+
+Repeat the following going leftward from and including this digit, until (and
+including) the leftmost digit.
+
+ 0. Calculate the product of the current digit and 2^index
+ 1. Add previously calculated product to total.
+ 2. Increase "index" by 1.
+
+Return the value of "total".
+
+3) total = 175
+   binary = ''
+
+   while total > 1:
+       r = total % 2
+       binary += str(r)
+       total -= r
+       total //= r
+
+   print('1' + binary[::-1])
