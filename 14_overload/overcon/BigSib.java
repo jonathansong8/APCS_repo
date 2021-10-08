@@ -14,22 +14,18 @@ QCC:
 */
 
 public class BigSib {   
-
-	// instanced var
+	
 	private String mmsg; 
 
-	// default constructor
 	public BigSib(){
 		mmsg = "Word up";
 	}
 
-	// overloaded constructor 
 	public BigSib (String msg){		
 		 mmsg = msg;
 	}
 
         public String greet (String name){
 		return(mmsg + " " +  name);
-
         }
 }
