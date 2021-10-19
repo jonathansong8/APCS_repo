@@ -123,6 +123,7 @@ public class BankAccount{
     BankAccount richard = new BankAccount();
     richard.setName("rich123");
     richard.setPassword("richardo");
+    richard.setBalance(100005.25);
     //PIN
     richard.setPin(100000); //expecting invalid outcome
     System.out.println( richard.toString());
