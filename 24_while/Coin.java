@@ -107,6 +107,7 @@ public class Coin {
               } else {
                 value = 1.00;
               }
+            }
           }
        }
     }
