@@ -30,38 +30,6 @@ public class Pig
     }
   }//end hasA()
 
-public class Pig
-{
-  //Q: How does this initialization make your life easier?
-  private static final String VOWELS = "aeiouy";
-  private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  private static final String PUNCS = ".,:;!?";
-
-  /*=====================================
-    boolean hasA(String,String) -- checks for a letter in a String
-    pre:  w != null, letter.length() == 1
-    post: hasA("cat", "a") -> true
-    hasA("cat", "p")       -> false
-    =====================================*/
-  public static boolean hasA( String w, String letter )
-  {
-    /* YOUR IMPLEMENTATION HERE */
-    if(letter.length()!=1){
-      System.out.println("Letter must have length 1.");
-      return false;
-    }
-    if(w.length()<1){
-      System.out.println("String w length cannot be less than 1.");
-      return false;
-    }
-    if (-1 != w.indexOf(letter)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }//end hasA()
-
 
   /*=====================================
     boolean isAVowel(String) -- tells whether a letter is a vowel
@@ -168,7 +136,7 @@ public class Pig
             isUpperCase("A") -> true
       =====================================*/
     public static boolean isUpperCase( String letter ) {
-	if ( letter != indexOf(CAPS) ) { //test this
+	if ( !(letter.equals(CAPS.indexOf( letter ) ))) { //test this
 		return false;
 	}
 	else {
@@ -183,9 +151,11 @@ public class Pig
       post: hasPunc(“cat.”) -> true
             hasPunc(“cat”) -> false
       =====================================*/
+      /*
     public static boolean hasPunc( String w ) {
 
     }
+    /*
 
 
     /*=====================================
@@ -201,8 +171,8 @@ public class Pig
 
 	
 	public static void main(String[] args){
-		System.out.println(isUppercase("B")); //return true
-		System.out.println(isUppercase("b"));
+		System.out.println(isUpperCase("B")); //return true
+		System.out.println(isUpperCase("b"));
 		
 	}
 }
