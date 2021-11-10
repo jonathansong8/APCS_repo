@@ -161,4 +161,4 @@ public class Pig
 
 	return isUpperCase(w.substring(0,1) );
     }
-
+}
