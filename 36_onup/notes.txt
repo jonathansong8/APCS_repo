@@ -1,0 +1,34 @@
+Jonathan Song
+APCS
+HW36 - All Quacked Up
+2021-11-18
+time spent: 0.5hrs
+
+Types of Errors:
+ - Complie time error: indicates that there is something wrong with the syntax of the program
+ - Run-time error: produced when something goes wrong while program is running
+ - Logical error: causes the program to do something not meant to be done
+ 
+ Fixing Compile-time Errors:
+ - Look at first error listed
+ - Number of error messages doesn't equal the number of errors
+ - Check for common errors
+ 
+ Fixing Run-time Errors:
+ - Make sure your program isn't stuck in an infinite loop
+ - If there is an infinte recursion, check if method has a base case
+ - Don't overload with print statements
+ 
+ Fixing Logic Erors
+ - Check if something that is supposed to happen doesn't happen
+ - Breack the program down into components
+ - Program simplicity is key
+ 
+ Tips to Follow for Clean Code:
+ - Check if parentheses and brackets are in order
+ - Indent to make it easier finding errors
+ - Print out variables correctly
+ - Use a visualizer to make your the output is correct
+ - SEMICOLONS ARE IMPORTANT
+ - Make sure to have correct return type
+ - Use dot notation when invoking static methods
