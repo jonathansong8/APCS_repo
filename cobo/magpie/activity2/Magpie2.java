@@ -9,6 +9,22 @@
  * This version uses a nested if to handle default responses.
  * @author Laurie White
  * @version April 2012
+ * 
+ * Justin Mohabir, Jonathan SOng, Kevin Li
+ * APCS
+ * HW56 -- Chatbot lab
+ * 2022-1-12
+ * time spent: .2 hours
+ * 
+ * QCC: 
+ * What happens when more than one keyword appears in a string? Consider the string “My mother has a dog but no cat.” 
+ * Explain how to prioritize responses in the reply method.
+ * 	- When more than one keyword is present, the response is prioritized from top to bottom in the code, so the keyword highest up in the if else chain determiens the response
+ * What happens when a keyword is included in another word? Consider statements like “I know all the state capitals” and “I like vegetables smothered in cheese.” 
+ * Explain the problem with the responses to these statements.
+ *	- When the keywords are embedded, the thwy will still be recognized, and the getResponse method would print out the corresponding response, even if it doesn't make sense
+ *	- If the full keyword has lower priority than the embedded one, then the response for the full keyword won't get printed
+ 
  */
 public class Magpie2
 {
@@ -42,6 +58,31 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Mykolyk") >= 0)
+		{
+			response = "He sounds like a good teacher.";
+		}
+    else if (statement.indexOf("justin") >= 0)
+		{
+			response = "He sounds like a good justin.";
+		}
+    else if (statement.indexOf("jonathan") >= 0)
+		{
+			response = "He sounds like a good jonathan.";
+		}
+    else if (statement.indexOf("kevin") >= 0)
+		{
+			response = "He sounds like a good kevin.";
+		}
+		else if ((statement.trim()).length() == 0)
+		{
+			response = "Say something, please.";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -55,7 +96,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +116,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "Go on.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That sounds nice.";
 		}
 
 		return response;
