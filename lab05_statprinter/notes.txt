@@ -1,0 +1,23 @@
+Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
+APCS pd7
+L05 -- pulling it together
+2022-02-03r
+time spent: 0.5 hrs
+
+
+DISCO
+------------------------------------------------
+* We needed the frequency ArrayList to print the frequencies properly. (Adjusted driver code)
+================================================
+
+
+QCC
+------------------------------------------------
+* What happens if longestBar is not divisible by the max frequency value?
+================================================
+
+
+MISC
+------------------------------------------------
+* N/A
+================================================
