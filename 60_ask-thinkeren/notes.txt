@@ -1,0 +1,17 @@
+TNPG: Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
+APCS
+HW60 -- A Termite is-a Turtle, a Thinker is-a Turtle
+2022-02-07
+time spent: 0.5 hr
+
+DISCO:
+- as sentient thinkers, we are able to sort cards, but as turtles, the task is too complicated to relegate to just a few thinkeren.
+
+QCC:
+- how difficult would it be to deal with list remnants? (i.e. if one list is exhausted during merge while the other still has elements left)
+
+THINKER FIRMWARE:
+- Upon receiving a deck of cards, is the quantity one?
+- If yes, return the deck to the thinker/turtle who gave you the deck.
+- If not, split the deck into two and hand the two decks to 2 free thinkeren;
+- Upon receiving the decks back, merge them together in ascending order and hand it back to the thinker who gave you the deck.
