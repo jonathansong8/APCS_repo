@@ -1,9 +1,15 @@
+/*
+Pumpkin (Jefford Shau, Jonathan Song, Anthony Sun)
+APCS
+HW61 -- Instructions so Simple...
+2022-02-07
+time spent: 0.5 hr
+*/
+
 /***
   class MergeSort
   Implements mergesort on array of ints.
-
   Summary of Algorithm:
-
   ***/
 
 public class MergeSort
@@ -17,8 +23,29 @@ public class MergeSort
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-	int ctrA = 0;
-	int ctrB = 0;
+    int aIdx = 0;
+    int bIdx = 0;
+    int[] sorted = new int[a.length + b.length];
+    for (int i = 0 ; i < sorted.length; i++) {
+      if (aIdx == a.length) {
+        sorted[i] = b[bIdx];
+        bIdx += 1;
+      }
+      else if (bIdx == b.length) {
+        sorted[i] = a[aIdx];
+        aIdx += 1;
+      }
+      else if (a[aIdx] > b[bIdx]) {
+        sorted[i] = b[bIdx];
+        bIdx += 1;
+      }
+      else {
+        sorted[i] = a[aIdx];
+        aIdx += 1;
+      }
+    }
+    return sorted;
+
 
   }//end merge()
 
@@ -30,20 +57,19 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
-	if(arr.size() == 1){
-		return arr;
-	}
-	int mid = arr.size()/2;
-	int[] lower = new int[mid];
-	int[] higher = new int[arr.size()-mid];
-	for (int i = 0; i<mid; i++){
-		lower[i] = arr[i];
-	}
-	for (int i = mid+1; i<arr.size(); i++){
-		higher[i] = arr[i];
-	}
-
-	return merge(sort(lower), sort(higher));
+    if (arr.length == 1 ) {
+      return arr;
+    }
+    int mid = arr.length / 2;
+    int[] lower = new int[mid];
+    int[] higher = new int[arr.length - mid];
+    for (int i = 0; i < mid; i++) {
+      lower[i] = arr[i];
+    }
+    for (int i = 0; i < arr.length - mid; i++) {
+      higher[i] = arr[i + mid];
+    }
+    return merge(sort(lower), sort(higher));
   }//end sort()
 
 
@@ -69,7 +95,7 @@ public class MergeSort
   //main method for testing
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
+
       int[] arr0 = {0};
       int[] arr1 = {1};
       int[] arr2 = {1,2};
@@ -78,23 +104,20 @@ public class MergeSort
       int[] arr5 = {4,3,2,1};
       int[] arr6 = {9,42,17,63,0,512,23};
       int[] arr7 = {9,42,17,63,0,9,512,23,9};
-
       System.out.println("\nTesting mess-with-array method...");
       printArray( arr3 );
       mess(arr3);
       printArray( arr3 );
-
       System.out.println("\nMerging arr1 and arr0: ");
       printArray( merge(arr1,arr0) );
-
       System.out.println("\nMerging arr4 and arr6: ");
       printArray( merge(arr4,arr6) );
-
       System.out.println("\nSorting arr4-7...");
       printArray( sort( arr4 ) );
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );
       printArray( sort( arr7 ) );
+          /*~~~~~~~~~~~~~~ Ye Olde Tester Bar ~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
