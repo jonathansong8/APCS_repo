@@ -1,0 +1,11 @@
+Pumpkin (Jefford Shau, Jonathan Song, Anthony Sun)
+APCS
+HW61 -- Instructions so Simple...
+2022-02-07
+time spent: 0.5 hr
+
+DISCO:
+  0. Used the visualizer to fix IndexOutOfBounds errors for sort() method.
+
+QCC:
+  0. Can you create the lower and higher halves of the array in the sort() method without the for loops? 
