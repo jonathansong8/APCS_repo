@@ -2,3 +2,14 @@ errata:
 
 * hashmap is java equivalent to the python dictionaries you know and love
 * nothing else should seem too unfamiliar to a Thinker
+
+TNPG: Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
+
+DISCO:
+  0. Hashmaps are not as hard as they seem to be.
+  1. We used the bottom helper methods to add punctuation and replace adjectives in the lab.
+  2. We made a Splice method to convert the string into an ArrayList that could be used in a for loop.
+  3. The while loop in Activity 5 was much harder to write than the for loop.
+
+QCC:
+  0. When should you use nested conditional statements and when should you use multiple boolean expressions? 
