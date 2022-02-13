@@ -1,3 +1,7 @@
+/*
+TNPG: Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
+*/
+
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -170,13 +174,14 @@ public class Review {
   public static ArrayList<String> splice(String text, String key) {
     int indexOfKey = text.indexOf(key);
     ArrayList<String> strs = new ArrayList<String>();
-    // if only one word return the word
+    // base case
     if (indexOfKey == -1) {
       strs.add(text);
     }
     // separates the words in the string
     else {
       strs.add(text.substring(0,indexOfKey));
+      // recursion
       for (String s : splice(text.substring(indexOfKey+1), key)) {
         strs.add(s);
       }
@@ -192,16 +197,36 @@ public class Review {
   public static String removeDups(String words) {
     ArrayList<String> spliced = new ArrayList<String>();
     String out = "";
+    String punc = "";
     for (String word : splice(words, SPACE)) {
-      String punc = getPunctuation(word);
+      punc = getPunctuation(word);
       spliced.add(removePunctuation(word));
       spliced.add(punc);
     }
+
+    // String wor = "";
+    // while (words.trim().indexOf(SPACE) > 0) {
+    //   wor = words.substring(0, words.indexOf(SPACE));
+    //   words = words.substring(words.indexOf(SPACE) + 1);
+    //
+    //   punc = getPunctuation(wor);
+    //   spliced.add(removePunctuation(wor));
+    //   spliced.add(punc);
+    // }
+    // punc = getPunctuation(words);
+    // spliced.add(removePunctuation(words));
+    // spliced.add(punc);
+
     for (int i = 0; i < spliced.size() - 1; i++) {
       for (int j = i + 1; j < spliced.size() - 1; j++) {
         if (spliced.get(i).toLowerCase().equals(spliced.get(j).toLowerCase()) && !isPunctuation(spliced.get(i))) {
           spliced.remove(j);
         }
+        // if (spliced.get(i).toLowerCase().equals(spliced.get(j).toLowerCase())) {
+	      //    if (!isPunctuation(spliced.get(i))) {
+        //      spliced.remove(j);
+        //    }
+        //  }
       }
     }
     for (int k = 0; k < spliced.size() - 1; k++) {
