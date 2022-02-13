@@ -1,3 +1,5 @@
+TNPG: Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
+
 1.
 a. sentimentVal( String word )
 b. it requires a String. it throws an error if a different type is given as an argument
@@ -60,12 +62,43 @@ Open-Ended Activity:
 2. We developed our plan on paper. We decided to use the splice method we already have in the folder to separate the String into words. Nested for loops were going to be used to remove duplicates. Removing words that vary in length from Strings is difficult, so we decided to use an ArrayList for this. After the removal, another for loop would be used to convert the ArrayList back into a String to return. We developed our code incrementally, one step at a time described above. After writing the method, we tested it using many different cases. We fixed the remaining formatting errors at the end.
 3.
 public static String removeDups(String words)
-We chose a single parameter  because you only need the data set to remove duplicates. We chose data-type String instead of an ArrayList or String array because we wanted to make the project a bit more challenging. The method we made is static because we are not initializing an instance of the class "Review." An instance/object of the class is necessary to run non-static methods.
+We chose a single parameter because you should only need the data set to remove duplicates. We chose data-type String instead of an ArrayList or String array because String parameters are used in the Review lab. The method we made is static because we are not initializing an instance of the class "Review." An instance/object of the class is necessary to run non-static methods.
 4.
-noPunc1.equals(noPunc2)
-This method call is comparing the content/value of this object, which is String noPunc1, to the object argument, which is String noPunc2. The method returns a boolean value, either true or false.
+lower1.equals(lower2)
+This method call is comparing the content/value of this object, which is String lower1, to the object argument, which is String lower2. The method returns a boolean value, either true or false.
+
 out.trim()
 This method call cuts off all leading and trailing whitespaces to this String, which is String out. The method returns a copy of the String.
 5.
+if (spliced.get(i).toLowerCase().equals(spliced.get(j).toLowerCase()) && !isPunctuation(spliced.get(i))) {
+   spliced.remove(j);
+}
 
-6. 
+One other way that this code could be written to achieve the same result is by using nested conditional statements.
+
+if (spliced.get(i).toLowerCase().equals(spliced.get(j).toLowerCase())) {
+	 if (!isPunctuation(spliced.get(i))) {
+      spliced.remove(j);
+    }
+}
+6.
+for (String word : splice(words, SPACE)) {
+  String punc = getPunctuation(word);
+  spliced.add(removePunctuation(word));
+  spliced.add(punc);
+}
+
+This loop first calls the splice method, giving it the arguments of words and SPACE (" "). The splice method returns an ArrayList with words from the String words in each element position. The for loop sets each word in each element of the ArrayList to the String word. On each iteration, the punctuation, if there is any, behind the word is set to punc. The word without the punctuation is added to the ArrayList spliced. The punctuation in the variable punc is added to the ArrayList spliced.
+
+String wor = "";
+while (words.trim().indexOf(SPACE) > 0) {
+  wor = words.substring(0, words.indexOf(SPACE));
+  words = words.substring(words.indexOf(SPACE) + 1);
+
+  punc = getPunctuation(wor);
+  spliced.add(removePunctuation(wor));
+  spliced.add(punc);
+}
+punc = getPunctuation(words);
+spliced.add(removePunctuation(words));
+spliced.add(punc);
