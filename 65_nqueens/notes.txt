@@ -1,0 +1,12 @@
+Pumpkin (Jefford Shau, Jonathan Song, Anthony Sun)
+APCS
+HW65 -- nqueens
+2022-02-16
+time spent: 1 hr
+
+DISCO:
+- boolean returns is extremely useful for backtracking recursive methods
+- backtracking requires a way to step forward and a way to step backward
+
+QCC:
+- how can we vary the solutions that the code can generate?
