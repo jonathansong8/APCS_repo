@@ -1,3 +1,9 @@
+/**Team Something Important Minus One: Joshua Yagupsky, Jonathan Song
+APCS pd7
+L07 --  Card Game
+2022-03-20
+time spent: 3.5 hr
+**/
 import java.util.List;
 import java.util.ArrayList;
 
@@ -30,7 +36,13 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList<Card>();
+		for (int i = 0; i < ranks.length; i++) {
+			for (String suit : suits) {
+				cards.add(new Card(ranks[i],suit, values[i]));
+			}
+		}
+		size = cards.size();
 	}
 
 
@@ -39,7 +51,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size <= 0;
 	}
 
 	/**
@@ -47,7 +59,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
 	}
 
 	/**
@@ -64,7 +76,13 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if(!this.isEmpty()){
+			size--;
+			return cards.get(size);
+		}
+		else{
+			return null;
+		}
 	}
 
 	/**
