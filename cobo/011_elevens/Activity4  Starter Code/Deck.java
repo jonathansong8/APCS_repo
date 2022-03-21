@@ -1,3 +1,9 @@
+/**Team Something Important Minus One: Joshua Yagupsky, Jonathan Song
+APCS pd7
+L07 --  Card Game
+2022-03-20
+time spent: 3.5 hr
+**/
 import java.util.List;
 import java.util.ArrayList;
 
@@ -61,9 +67,15 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-	}
+	 public void shuffle() {
+ 		for(int k = cards.size()-1; k >= 0; k--){
+ 			int r = (int)(Math.random()*(k+1));
+ 			Card temp = cards.get(k);
+ 			cards.set(k, cards.get(r));
+ 			cards.set(r, temp);
+ 		}
+		size = cards.size();
+ 	}
 
 	/**
 	 * Deals a card from this deck.
