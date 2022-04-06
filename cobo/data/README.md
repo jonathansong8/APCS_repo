@@ -14,3 +14,5 @@ $ java -classpath .:path/to/sinbad.jar Driver
 
 411 on sinbad 
 https://berry-cs.github.io/sinbad/install-java
+
+Overall, this lab was very interesting, as well as being simple enough to easily do all of the activities. We also learned how to run the class path command, and how to extract data. This lab has been very helpful overall.
